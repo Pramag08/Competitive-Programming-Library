@@ -1,0 +1,21 @@
+---------------------------------------------------------------------------------------------------------------------------------------
+= BITSET OPTIMISATION.https://codeforces.com/blog/entry/73558
+-- bitset<1000000000> a; 
+-- a.count();
+-- bitset<1000005> dp;
+    dp[0] = 1; 
+    for(int i = 0; i < n; i++){
+        dp |= (dp << arr[i]);
+    }
+--cout << bitset<15>(123); integer into string
+---------------------------------------------------------------------------------------------------------------------------------------
+= PREFIX SUM
+When the order of an array doesn't matter and you need to maximize a sum under a penalty constraint, do not try to perfectly balance a ratio.
+Just use a Prefix Sum array and brute-force exactly how many restricted items you want to pick!
+---------------------------------------------------------------------------------------------------------------------------------------
+Dp[x]=I u can store index or value and compare them so that x is achieved or not.
+---------------------------------------------------------------------------------------------------------------------------------------
+Let an array a have a violation at index i if it fails the target sorted condition. To transform a sequence of positive integers into a strictly ascending sequence using range multiplications:
+In a Positive Segment, the number of operations required is the count of indices where a[i]>=a[i-1]
+In a Negative Segment, the number of operations required is the count of indices where a[i]<=a[i-1]
+---------------------------------------------------------------------------------------------------------------------------------------

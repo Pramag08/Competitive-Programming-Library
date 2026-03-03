@@ -1,0 +1,25 @@
+------------------------------------------------------------------------------------
+DSU
+int p[N], sz[N];
+void dsu_init(int n) {
+    for(int i=1;i<=n;i++) { p[i]=i; sz[i]=1; }
+}
+int dsu_get (int x) {
+    return (x == p[x] ? x : p[x] = dsu_get (p[x]));
+}
+bool dsu_unite ( int x, int y) {
+    x = dsu_get (x); y = dsu_get (y);
+    if(x == y) return false ;
+    if(sz[x] < sz[y]) swap (x, y);
+    p[y] = x;
+    sz[x] += sz[y];
+    return true ;
+}
+int getcomp(int n){
+    set<int> s;
+    for(int i=1;i<=n;i++){
+        s.insert(dsu_get(i));
+    }
+    return s.size();
+}
+------------------------------------------------------------

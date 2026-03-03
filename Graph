@@ -1,0 +1,28 @@
+GRAPHS
+
+= Toposort=> order + cycle
+
+
+
+= When you see: "Each person points to one other person," "Each node has exactly one outgoing edge," or an array like A[i] = x.
+Your immediate thought: Functional Graph.
+
+= Diameter get the height, store dept of a store dept of b. 
+
+    auto dfs = [&](auto&& self, int v, int par, int h, vector<int> &d) -> void {
+        d[v] = h;
+        for (int i : G[v]) { // G is automatically captured from your local scope
+            if (i != par) {
+                self(self, i, v, h + 1, d); // Call 'self' to recurse
+            }
+        }
+    };
+    vector<int> d1(n, 0), d2(n, 0);
+    dfs(dfs, 0, -1, 0, d1);
+    int a = max_element(all(d1)) - d1.begin();
+    dfs(dfs, a, -1, 0, d1);
+    int b = max_element(all(d1)) - d1.begin();
+    dfs(dfs, b, -1, 0, d2);
+    for (int i = 0; i < n; ++i) {
+        d2[i] = max(d2[i], d1[i]);
+    }

@@ -16,10 +16,10 @@ bool dsu_unite ( int x, int y) {
     return true ;
 }
 int getcomp(int n){
-    set<int> s;
-    for(int i=1;i<=n;i++){
-        s.insert(dsu_get(i));
+    int ans = 0;
+    for (int i = 1; i <= n; i++) {
+        if (dsu_get(i) == i) ans++;
     }
-    return s.size();
+    return ans;
 }
 ------------------------------------------------------------

@@ -19,3 +19,13 @@ Let an array a have a violation at index i if it fails the target sorted conditi
 In a Positive Segment, the number of operations required is the count of indices where a[i]>=a[i-1]
 In a Negative Segment, the number of operations required is the count of indices where a[i]<=a[i-1]
 ---------------------------------------------------------------------------------------------------------------------------------------
+Whenever you see:
+
+k * (sum of some range)
+(k+1) * (sum of next range)
+
+try:
+Expand the expression
+Rearrange terms
+Convert into sum of prefix/suffix values
+---------------------------------------------------------------------------------------------------------------------------------------

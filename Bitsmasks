@@ -1,0 +1,16 @@
+
+When you see: "Guess the number," "You can add/subtract and see the count of set bits," and strict query limits (like exactly 30 queries).
+Your immediate thought: Ripple Carry / Borrow Chains.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+removes lower set bit: m&(m-1)
+----------------------------------------------------------------------------------------------------------------------------------------------------
+msb=63 - __builtin_clzll(n);
+----------------------------------------------------------------------------------------------------------------------------------------------------
+no. of increasing subsequences in incr subarray= 2^l-1
+----------------------------------------------------------------------------------------------------------------------------------------------------
+When you are asked to count the number of valid items (y), but y is too large to iterate over, find a generator equation like y = f(k).
+If the function is a bijection (a strict 1-to-1 relationship), then every unique input k guarantees a unique output y.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Even though XOR fluctuates, it is mathematically caged inside a strict boundary.For any A^B, the value is bounded by:A - B <= A ^ B <= A + B.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+

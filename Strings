@@ -1,0 +1,7 @@
+Conditional swapping problems are almost never actually about simulating swaps. They are about partitioning the array into subsequences that are already valid.
+----------------------------------------------------------
+If the alphabet is small, make the alphabet size a dimension in your DP state. dp[i][char] or tracking a 26-element array max_ending_at[char] is a massive red flag that you are on the right track.
+----------------------------------------------------------
+Partitioning into minimum increasing subsequences = finding the length of the Longest Decreasing Subsequence (LDS).
+Partitioning into minimum decreasing subsequences = finding the length of the Longest Increasing Subsequence (LIS).
+----------------------------------------------------------

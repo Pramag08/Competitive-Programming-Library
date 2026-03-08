@@ -10,3 +10,5 @@ Check for shrinkage: for ex if its next one is multiple/factor the constant fact
 -------------------------------------------------------------------------------------------------
 Get the PIE: is [0,1<<p-1] just get all the possible case and subtract the odd lengths and add the even lengths.
 -------------------------------------------------------------------------------------------------
+ax+by=multiple of gcd(a,b)
+-------------------------------------------------------------------------------------------------

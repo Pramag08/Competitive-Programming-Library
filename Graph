@@ -33,3 +33,23 @@ Your immediate thought: Functional Graph.
         d2[i] = max(d2[i], d1[i]);
     }
 --------------------------------------------------------------------------------------------------------------------------------
+vector<bool> vis(n, false);
+vector<int> cycle_id(n, -1);
+int cycles = 0;
+
+    // Step 1: Find all cycles and label each element with its cycle ID
+    for (int i = 0; i < n; i++) {
+        if (!vis[i]) {
+            int curr = i;
+            while (!vis[curr]) {
+                vis[curr] = true;
+                cycle_id[curr] = cycles;
+                curr = a[curr];
+            }
+            cycles++;
+        }
+    }
+PERMUTATION : UNION OF DISJOINT CYCLES, whenever there is a swap of pi and pj and we have to sort it with minimum number of operations.
+--------------------------------------------------------------------------------------------------------------------------------
+
+

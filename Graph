@@ -49,7 +49,7 @@ int cycles = 0;
             cycles++;
         }
     }
-PERMUTATION : UNION OF DISJOINT CYCLES, whenever there is a swap of pi and pj and we have to sort it with minimum number of operations.
+PERMUTATION : UNION OF DISJOINT CYCLES, whenever there is a swap of pi and pj and we have to sort it with minimum number of operations= (n- number of cycles).
 --------------------------------------------------------------------------------------------------------------------------------
 
 

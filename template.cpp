@@ -409,6 +409,19 @@ struct Hash {
         return {res1, res2};
     }
 };
+// -------------------- INVERSIONS --------------------
+long long get_inversions(const vector<int>& a) {
+    ordered_set<pair<int, int>> os;
+    long long inversions = 0;
+    
+    for (int i = 0; i < a.size(); i++) {
+        int elements_less_equal = os.order_of_key({a[i] + 1, 0});
+        inversions += i - elements_less_equal;
+        os.insert({a[i], i});
+    }
+    
+    return inversions;
+}
 // ----------------------- UTILITIES --------------------
 inline ll add(ll a, ll b, ll m = mod) {a = (a + b) % m;return (a < 0) ? a + m : a;}
 inline ll sub(ll a, ll b, ll m = mod) {a = (a - b) % m;return (a < 0) ? a + m : a;}

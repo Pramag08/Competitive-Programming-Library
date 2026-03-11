@@ -1,0 +1,4 @@
+In a std::multiset, if you pass a value directly to .erase(), C++ will destroy every single copy of that value in the entire set.
+If your array had three pairs that all started with the number 10, xs.erase(10) instantly deletes all three of them!
+when you do xs.insert(x) at the end of the loop, it only puts one 10 back. You have silently corrupted the state of your array.
+---------------------------------------------------------------------------------------------------------------------------------

@@ -22,4 +22,38 @@ int getcomp(int n){
     }
     return ans;
 }
-------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+1. The Edge Contribution Technique (Changing the Order of Summation)
+The Law: Every edge splits a tree into two components of sizes S and N - S.
+The Math: Exactly S* (N - S) paths are forced to cross that edge.
+The Result: Summing this multiplication for every edge gives you the grand total of all path lengths in the entire tree, requiring only one simple DFS.
+
+2. DP REROOTING: for every node get the sum of paths to every node.
+vector<int> sz(n, 0), dp(n, 0), ans(n, 0);
+// Pass 1: Gather subtree data
+auto dfs1 = [&](auto &&self, int u, int p) -> void {
+    sz[u] = 1;
+    for(auto &v : adj[u]){
+        if(v != p){
+            self(self, v, u);
+            sz[u] += sz[v];
+            dp[u] += dp[v] + sz[v]; 
+        }
+    }
+};
+dfs1(dfs1, 0, -1);
+
+// Initialize the root's true answer
+ans[0] = dp[0]; 
+
+// Pass 2: Push the truth down
+auto dfs2 = [&](auto &&self, int u, int p) -> void {
+    for(auto &v : adj[u]){
+        if(v != p){
+            ans[v] = ans[u] - sz[v] + (n - sz[v]);
+            self(self, v, u);
+        }
+    }
+};
+dfs2(dfs2, 0, -1);
+-------------------------------------------------------------------------------------------------------------------------

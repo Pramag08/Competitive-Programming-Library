@@ -13,4 +13,5 @@ If the function is a bijection (a strict 1-to-1 relationship), then every unique
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Even though XOR fluctuates, it is mathematically caged inside a strict boundary.For any A^B, the value is bounded by:A - B <= A ^ B <= A + B.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-
+When you sort numbers, numbers that share the longest prefix of identical high-order bits are naturally forced to sit right next to each other.
+----------------------------------------------------------------------------------------------------------------------------------------------------

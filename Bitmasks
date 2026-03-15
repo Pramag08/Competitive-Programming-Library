@@ -15,3 +15,9 @@ Even though XOR fluctuates, it is mathematically caged inside a strict boundary.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 When you sort numbers, numbers that share the longest prefix of identical high-order bits are naturally forced to sit right next to each other.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
+ The Golden Rule of Binary (MSB is King)
+In binary, a single bit is strictly greater than the sum of all bits to its right. (2^k > sum of {i=0 to k-1} 2^i).
+How to use it: Whenever a problem asks you to minimize or maximize a bitwise value, always iterate from left to right 
+(from the 60th bit down to the 0th bit).The moment you can safely turn on a high bit, do it.
+It doesn't matter if it ruins every single smaller bit; the math guarantees you still come out ahead.
+----------------------------------------------------------------------------------------------------------------------------------------------------

@@ -2,3 +2,35 @@ In a std::multiset, if you pass a value directly to .erase(), C++ will destroy e
 If your array had three pairs that all started with the number 10, xs.erase(10) instantly deletes all three of them!
 when you do xs.insert(x) at the end of the loop, it only puts one 10 back. You have silently corrupted the state of your array.
 ---------------------------------------------------------------------------------------------------------------------------------
+The Forward Sweep (Left-to-Right)
+Goal: Find how far right a chain can reach.
+Sorting: Sort strictly by the Left bound, Ascending.
+The State Variable: You only need to track the max_R (the furthest right you've reached so far).
+
+vector<pair<int, int>> merge_forward(vector<pair<int, int>>& intervals) {
+    if (intervals.empty()) return {};
+    
+    // 1. Sort by Left bound ASCENDING
+    sort(intervals.begin(), intervals.end()); 
+    
+    vector<pair<int, int>> merged;
+    int curr_L = intervals[0].first;
+    int max_R = intervals[0].second;
+    
+    for (int i = 1; i < intervals.size(); i++) {
+        if (intervals[i].first <= max_R) {
+            // CHAIN DETECTED: It started before our right bound ran out.
+            // Propagate the maximum right bound.
+            max_R = max(max_R, intervals[i].second);
+        } else {
+            // CHAIN BROKEN: It started strictly after our right bound.
+            // Save the old chain, start a new one.
+            merged.push_back({curr_L, max_R});
+            curr_L = intervals[i].first;
+            max_R = intervals[i].second;
+        }
+    }
+    merged.push_back({curr_L, max_R});
+    return merged;
+}
+---------------------------------------------------------------------------------------------------------------------------------

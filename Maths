@@ -4,7 +4,7 @@ isolation of some numbers/equations to get specific condition
 When you see: "Find the median," "Count subarrays where the median is X," or "Majority element."
 Your immediate thought: The +1 / -1 Transformation.
 -------------------------------------------------------------------------------------------------
-gap of coprimes is <=60 for n<=1e18, gap for primes <=1e18
+gap of coprimes is <=60 for n<=1e18, gap for primes ~1500 <=1e18
 -------------------------------------------------------------------------------------------------
 Check for shrinkage: for ex if its next one is multiple/factor the constant factor will be log(m)
 -------------------------------------------------------------------------------------------------

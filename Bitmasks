@@ -21,3 +21,5 @@ How to use it: Whenever a problem asks you to minimize or maximize a bitwise val
 (from the 60th bit down to the 0th bit).The moment you can safely turn on a high bit, do it.
 It doesn't matter if it ruins every single smaller bit; the math guarantees you still come out ahead.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
+(y >> i << i)  erases the left ith bits
+----------------------------------------------------------------------------------------------------------------------------------------------------

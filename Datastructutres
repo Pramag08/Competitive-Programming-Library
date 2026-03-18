@@ -34,3 +34,28 @@ vector<pair<int, int>> merge_forward(vector<pair<int, int>>& intervals) {
     return merged;
 }
 ---------------------------------------------------------------------------------------------------------------------------------
+Theorem 1: The "Buy Everything, Refund the Worst" Principle
+When to use it: You need to maximize the count of items (or minimize the sum of items for a fixed count) subject to a strict budget constraint.
+
+The Law: Instead of trying to cleverly pick the best items one by one, be entirely greedy. 
+Throw every item into a cart (a Max-Heap Priority Queue). If your total cost exceeds the budget, instantly pop() the single most expensive item in the cart and throw it away.
+
+The Strategy: The heap guarantees that whatever remains inside it is the absolute cheapest possible combination of elements you've seen so far.
+At every step, check if the current state is valid, and update ans = max(ans, pq.size()).
+
+Theorem 2: The Dummy Tax (Monotonic Relaxation)
+When to use it: You are sweeping a window, and expanding the window adds a penalty (like distance or rent). 
+You are using a Priority Queue to manage the items inside the window.
+
+The Law: If the penalty to expand the window strictly increases (e.g., moving j to the right makes (b_j - b_i) larger), 
+you do not need to protect your boundary elements.
+The Proof of Safety:
+The Overcharge: If your queue pops the boundary element a_j, your code will calculate a "wrong", overpriced penalty for the remaining elements.
+The Eviction: This overpriced penalty might cause your queue to panic and pop other good elements.
+
+The Guarantee: If a good element is destroyed by the "wrong" penalty at step j, it is dead anyway! 
+Because the penalty strictly increases, it mathematically could never survive step j+1, j+2, or $j+3$.
+
+The Strategy: Push everything, including boundaries, into the queue. Let the queue pop whatever it wants. 
+You will calculate "wrong" intermediate states, but you will never miss the optimal answer because the exact, perfect boundaries will be naturally tested by your for loops.
+---------------------------------------------------------------------------------------------------------------------------------

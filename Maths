@@ -12,3 +12,14 @@ Get the PIE: is [0,1<<p-1] just get all the possible case and subtract the odd l
 -------------------------------------------------------------------------------------------------
 ax+by=multiple of gcd(a,b)
 -------------------------------------------------------------------------------------------------
+1. Linearity of Expectation (Slicing Time)Concept: 
+Break the expected sum of k messy, dependent steps into individual, independent slices.
+Rule: E[Total] = sum{i=1 to k} E[X_i].
+2. Expected Value of a Uniform DrawConcept: 
+When you pick exactly 1 item randomly from a pool of N items, its expected value is just the mathematical average of the entire pool.
+Rule: E[Pick] = Total Pool Sum/N.
+3. Linear State TransitionsConcept: 
+If the probability of changing your state remains constant (like a fixed m/N chance), 
+the expected value of your next state increases by a fixed constant.
+Rule: E[Next State] = Current State + Constant.
+-------------------------------------------------------------------------------------------------

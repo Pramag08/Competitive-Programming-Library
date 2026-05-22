@@ -23,3 +23,6 @@ If the probability of changing your state remains constant (like a fixed m/N cha
 the expected value of your next state increases by a fixed constant.
 Rule: E[Next State] = Current State + Constant.
 -------------------------------------------------------------------------------------------------
+F1+F3+F5...F2k-1=F2k  - 1
+F2+F4+F6...F2k= F2k+1  -1
+Sum=Fn+2 -1
